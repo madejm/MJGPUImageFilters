@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		7B1A066523B4F31000D007D4 /* MJGPUImageFilters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B1A066323B4F31000D007D4 /* MJGPUImageFilters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B1A066F23B4F38F00D007D4 /* MJFilterChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A066B23B4F38F00D007D4 /* MJFilterChain.swift */; };
+		7B1A067023B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B1A066C23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.h */; };
+		7B1A067123B4F38F00D007D4 /* MJGPUImageChannelBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A066D23B4F38F00D007D4 /* MJGPUImageChannelBlurFilter.swift */; };
+		7B1A067223B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A066E23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B1A066023B4F31000D007D4 /* MJGPUImageFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJGPUImageFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1A066323B4F31000D007D4 /* MJGPUImageFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJGPUImageFilters.h; sourceTree = "<group>"; };
 		7B1A066423B4F31000D007D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B1A066B23B4F38F00D007D4 /* MJFilterChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJFilterChain.swift; sourceTree = "<group>"; };
+		7B1A066C23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGPUImageRGBChannelFilter.h; sourceTree = "<group>"; };
+		7B1A066D23B4F38F00D007D4 /* MJGPUImageChannelBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJGPUImageChannelBlurFilter.swift; sourceTree = "<group>"; };
+		7B1A066E23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGPUImageRGBChannelFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,10 @@
 			children = (
 				7B1A066323B4F31000D007D4 /* MJGPUImageFilters.h */,
 				7B1A066423B4F31000D007D4 /* Info.plist */,
+				7B1A066C23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.h */,
+				7B1A066E23B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.m */,
+				7B1A066B23B4F38F00D007D4 /* MJFilterChain.swift */,
+				7B1A066D23B4F38F00D007D4 /* MJGPUImageChannelBlurFilter.swift */,
 			);
 			path = MJGPUImageFilters;
 			sourceTree = "<group>";
@@ -60,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B1A066523B4F31000D007D4 /* MJGPUImageFilters.h in Headers */,
+				7B1A067023B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 				TargetAttributes = {
 					7B1A065F23B4F31000D007D4 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -131,6 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1A067223B4F38F00D007D4 /* MJGPUImageRGBChannelFilter.m in Sources */,
+				7B1A067123B4F38F00D007D4 /* MJGPUImageChannelBlurFilter.swift in Sources */,
+				7B1A066F23B4F38F00D007D4 /* MJFilterChain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +277,7 @@
 		7B1A066923B4F31000D007D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QBJR4H3T2D;
@@ -276,6 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mejdej.MJGPUImageFilters;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +303,7 @@
 		7B1A066A23B4F31000D007D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QBJR4H3T2D;
